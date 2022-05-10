@@ -10,13 +10,8 @@ const PORT = 3000
 app.use(bodyParser.json())
 
 app.post("/hook", (req, res) => {
-    console.log(req.body)
-    res.status(200).end()
-})
-
-app.get("/status", (req, res) => {
     const myShellScript = exec("/var/www/seewhatiwilldo-spa/dev/build.sh");
-    console.log(req.body);
+    console.log(req.body)
 
     myShellScript.stdout.on('data', (data)=>{
         console.log(data);
@@ -27,6 +22,11 @@ app.get("/status", (req, res) => {
     });
 
     res.send("OK")
+    res.status(200).end()
+})
+
+app.get("/status", (req, res) => {
+    console.log(req.body);
 })
 
 app.listen(PORT, 'localhost', () => {
