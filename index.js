@@ -10,7 +10,7 @@ const PORT = 3000
 app.use(bodyParser.json())
 
 app.post("/hook", (req, res) => {
-    const myShellScript = exec("/var/www/seewhatiwilldo-spa/dev/build.sh");
+    const myShellScript = exec("/var/www/seewhatiwilldo.com/dev/build.sh");
     console.log(req.body)
 
     myShellScript.stdout.on('data', (data)=>{
