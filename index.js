@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const express = require("express")
 const bodyParser = require("body-parser")
 const res = require("express/lib/response")
@@ -32,3 +34,4 @@ app.get("/status", (req, res) => {
 app.listen(PORT, 'localhost', () => {
     console.log(`Express server started on port ${PORT}`)
 })
+
